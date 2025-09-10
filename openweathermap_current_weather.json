@@ -1,0 +1,50 @@
+{
+  "retrieved_at_utc": "2025-09-05T15:51:43.267820+00:00",
+  "cities": [
+    {
+      "city": "Chicago,US",
+      "lat": 41.8781,
+      "lon": -87.6298,
+      "metric": {
+        "status": 200,
+        "temp_C": 17.4,
+        "message": null
+      },
+      "imperial": {
+        "status": 200,
+        "temp_F": 63.3,
+        "message": null
+      }
+    },
+    {
+      "city": "London,GB",
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "metric": {
+        "status": 200,
+        "temp_C": 21.87,
+        "message": null
+      },
+      "imperial": {
+        "status": 200,
+        "temp_F": 71.69,
+        "message": null
+      }
+    },
+    {
+      "city": "Sydney,AU",
+      "lat": -33.8688,
+      "lon": 151.2093,
+      "metric": {
+        "status": 200,
+        "temp_C": 13.33,
+        "message": null
+      },
+      "imperial": {
+        "status": 200,
+        "temp_F": 56.3,
+        "message": null
+      }
+    }
+  ]
+}
