@@ -1,3 +1,8 @@
+Problem Statement: A real-time pipeline that collects external weather data from public APIs, processes and filters it, and stores the refined data for analytics and alerting. I designed and implemented this to demonstrate proper error handling, secure API key usage, and standardized data storage for multiple weather sources.
+
+Target State: The goal is to design and implement a fully automated data pipeline that ingests weather data from Open-Meteo, OpenWeatherMap, and the National Weather Service, transforms it, and stores it in a structured format for analysis, testing both normal and erroneous scenarios.
+
+
 Part A – Using a No-Auth Weather API (Open-Meteo)
 Connect to the Open-Meteo API using a city of your choice (use latitude and longitude).
 Retrieve hourly weather data including temperature and humidity.
