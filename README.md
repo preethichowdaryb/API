@@ -2,8 +2,20 @@ Problem Statement: A real-time pipeline that collects external weather data from
 
 Target State: The goal is to design and implement a fully automated data pipeline that ingests weather data from Open-Meteo, OpenWeatherMap, and the National Weather Service, transforms it, and stores it in a structured format for analysis, testing both normal and erroneous scenarios.
 
-Project Overview: This project demonstrates an end-to-end pipeline that fetches hourly temperature and humidity from Open-Meteo, current weather for multiple cities from OpenWeatherMap, and forecast data from the National Weather Service. It saves Open-Meteo data as a CSV and computes maximum and minimum temperatures for the next three days while demonstrating error handling for misspelled parameters. OpenWeatherMap results are stored as JSON, with secure API key usage, tests for invalid keys, and comparison between metric and imperial units. National Weather Service data is saved as JSON, requiring a custom User-Agent header, with demonstrations of what happens when the header is missing. The pipeline outputs both structured files and terminal logs for insights, error handling, and verification of data correctness.
+Project overview : This project builds a real-time weather data pipeline that integrates data from Open-Meteo, OpenWeatherMap, and the U.S. National Weather Service (NWS), then standardizes and stores the results for analytics and reporting. From Open-Meteo, it retrieves hourly temperature and humidity readings and computes 3-day max/min summaries. From OpenWeatherMap, it captures current weather snapshots for multiple cities, with secure API key handling via .env and negative test cases for invalid keys and unit conversions. From the NWS, it pulls forecast data using a required custom User-Agent, also demonstrating expected failures when headers are missing.
+The pipeline outputs data in structured formats—CSV for Open-Meteo and JSON for OpenWeatherMap and NWS—while logging validations, error handling, and data quality checks directly in the terminal. Overall, this repository highlights best practices in API integration, secure secret management, and resilient ETL design, producing clear, reproducible artifacts ready for downstream analysis or alerting.
 
-Architecture: Part A (Open-Meteo): Fetches hourly temperature and humidity, saves openmeteo_hourly.csv, computes max/min temperatures, and demonstrates error handling for invalid parameters. Part B (OpenWeatherMap): Fetches current weather for multiple cities, stores API key securely in .env, saves results as openweathermap_current_weather.json, tests invalid API keys, and compares metric vs imperial units. Part D (National Weather Service): Fetches forecast data for a location, requires a custom User-Agent header, saves results as nws.py, and demonstrates missing header behavior.
-
-Outputs: Open-Meteo CSV (openmeteo_weather.csv) and terminal prints for max/min temperatures and error handling. OpenWeatherMap JSON (openweather_cities.json) and terminal prints for weather data, invalid API key tests, and hottest/coldest city. National Weather Service JSON (nws_forecast.json) and terminal prints for forecast URL and missing User-Agent test (status code + snippet).
+Files in the repo : 
+.env – stores API keys securely
+README.md – project documentation
+app.py – main application script
+auth_server.py – authentication server code
+nws.py – National Weather Service integration
+open_meteo.py – Open-Meteo API integration
+open_meteo_hourly.csv – sample CSV output
+open_weather.py – OpenWeatherMap API integration
+openweathermap_current_weather.json – sample JSON output
+part c test run.txt – test run logs
+resource_api.py – shared API resource utilities
+settings.py – configuration settings
+pycache/ – Python cache folder
